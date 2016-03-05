@@ -1,0 +1,288 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 1995-2003 Xilinx, Inc.
+-- All Right Reserved.
+--------------------------------------------------------------------------------
+--   ____  ____ 
+--  /   /\/   / 
+-- /___/  \  /    Vendor: Xilinx 
+-- \   \   \/     Version : 9.1i
+--  \   \         Application : ISE
+--  /   /         Filename : testmemctl.ant
+-- /___/   /\     Timestamp : Thu Dec 06 21:39:28 2012
+-- \   \  /  \ 
+--  \___\/\___\ 
+--
+--Command: 
+--Design Name: testmemctl
+--Device: Xilinx
+--
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.STD_LOGIC_TEXTIO.ALL;
+USE STD.TEXTIO.ALL;
+
+ENTITY testmemctl IS
+END testmemctl;
+
+ARCHITECTURE testbench_arch OF testmemctl IS
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "C:\newnewcpu\testmemctl.ano";
+
+    COMPONENT memctl
+        PORT (
+            irreq : In std_logic;
+            wr : In std_logic;
+            rd : In std_logic;
+            addr : In std_logic_vector (15 DownTo 0);
+            pcaddr : In std_logic_vector (15 DownTo 0);
+            mdr : Out std_logic_vector (7 DownTo 0);
+            ir : Out std_logic_vector (15 DownTo 0);
+            regdata : In std_logic_vector (7 DownTo 0);
+            ABUS : Out std_logic_vector (15 DownTo 0);
+            DBUS : InOut std_logic_vector (15 DownTo 0);
+            nMERQ : Out std_logic;
+            nRD : Out std_logic;
+            nWR : Out std_logic;
+            nBHE : Out std_logic;
+            nBLE : Out std_logic
+        );
+    END COMPONENT;
+
+    SIGNAL irreq : std_logic := '0';
+    SIGNAL wr : std_logic := '0';
+    SIGNAL rd : std_logic := '0';
+    SIGNAL addr : std_logic_vector (15 DownTo 0) := "0000000000000000";
+    SIGNAL pcaddr : std_logic_vector (15 DownTo 0) := "0000000000000000";
+    SIGNAL mdr : std_logic_vector (7 DownTo 0) := "00000000";
+    SIGNAL ir : std_logic_vector (15 DownTo 0) := "0000000000000000";
+    SIGNAL regdata : std_logic_vector (7 DownTo 0) := "00000000";
+    SIGNAL ABUS : std_logic_vector (15 DownTo 0) := "0000000000000000";
+    SIGNAL DBUS : std_logic_vector (15 DownTo 0) := "ZZZZZZZZZZZZZZZZ";
+    SIGNAL nMERQ : std_logic := '0';
+    SIGNAL nRD : std_logic := '0';
+    SIGNAL nWR : std_logic := '0';
+    SIGNAL nBHE : std_logic := '0';
+    SIGNAL nBLE : std_logic := '0';
+
+    SHARED VARIABLE TX_ERROR : INTEGER := 0;
+    SHARED VARIABLE TX_OUT : LINE;
+
+    BEGIN
+        UUT : memctl
+        PORT MAP (
+            irreq => irreq,
+            wr => wr,
+            rd => rd,
+            addr => addr,
+            pcaddr => pcaddr,
+            mdr => mdr,
+            ir => ir,
+            regdata => regdata,
+            ABUS => ABUS,
+            DBUS => DBUS,
+            nMERQ => nMERQ,
+            nRD => nRD,
+            nWR => nWR,
+            nBHE => nBHE,
+            nBLE => nBLE
+        );
+
+        PROCESS    -- Annotation process
+            VARIABLE TX_TIME : INTEGER := 0;
+
+            PROCEDURE ANNOTATE_mdr(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", mdr, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, mdr);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_ir(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", ir, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, ir);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_ABUS(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", ABUS, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, ABUS);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_nMERQ(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", nMERQ, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, nMERQ);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_nRD(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", nRD, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, nRD);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_nWR(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", nWR, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, nWR);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_nBHE(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", nBHE, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, nBHE);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_nBLE(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", nBLE, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, nBLE);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+        BEGIN
+            WAIT for 1 fs;
+            ANNOTATE_mdr(0);
+            ANNOTATE_ir(0);
+            ANNOTATE_ABUS(0);
+            ANNOTATE_nMERQ(0);
+            ANNOTATE_nRD(0);
+            ANNOTATE_nWR(0);
+            ANNOTATE_nBHE(0);
+            ANNOTATE_nBLE(0);
+            ANNO_LOOP : LOOP
+                WAIT for 50 ns;
+                TX_TIME := TX_TIME + 50;
+                ANNOTATE_mdr(TX_TIME);
+                ANNOTATE_ir(TX_TIME);
+                ANNOTATE_ABUS(TX_TIME);
+                ANNOTATE_nMERQ(TX_TIME);
+                ANNOTATE_nRD(TX_TIME);
+                ANNOTATE_nWR(TX_TIME);
+                ANNOTATE_nBHE(TX_TIME);
+                ANNOTATE_nBLE(TX_TIME);
+                WAIT for 50 ns;
+                TX_TIME := TX_TIME + 50;
+            END LOOP ANNO_LOOP;
+        END PROCESS;
+
+        PROCESS
+            BEGIN
+                -- -------------  Current Time:  400ns
+                WAIT FOR 400 ns;
+                regdata <= "00100010";
+                -- -------------------------------------
+                -- -------------  Current Time:  500ns
+                WAIT FOR 100 ns;
+                wr <= '1';
+                addr <= "0000000000010001";
+                -- -------------------------------------
+                -- -------------  Current Time:  600ns
+                WAIT FOR 100 ns;
+                wr <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  900ns
+                WAIT FOR 300 ns;
+                irreq <= '1';
+                pcaddr <= "0000000000110011";
+                DBUS <= "0000000001000100";
+                -- -------------------------------------
+                -- -------------  Current Time:  1000ns
+                WAIT FOR 100 ns;
+                irreq <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  1400ns
+                WAIT FOR 400 ns;
+                DBUS <= "0000000001100110";
+                -- -------------------------------------
+                -- -------------  Current Time:  1500ns
+                WAIT FOR 100 ns;
+                rd <= '1';
+                addr <= "0000000001010101";
+                -- -------------------------------------
+                -- -------------  Current Time:  1600ns
+                WAIT FOR 100 ns;
+                rd <= '0';
+                WAIT FOR 8400 ns;
+
+                STD.TEXTIO.write(TX_OUT, string'("Total[]"));
+                STD.TEXTIO.writeline(RESULTS, TX_OUT);
+                ASSERT (FALSE) REPORT
+                    "Success! Simulation for annotation completed"
+                    SEVERITY FAILURE;
+            END PROCESS;
+
+    END testbench_arch;
+

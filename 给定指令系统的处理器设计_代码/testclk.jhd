@@ -1,0 +1,3 @@
+MODULE testclk
+SUBMODULE count5
+INSTANCE UUT

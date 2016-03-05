@@ -1,0 +1,7 @@
+vhdl work "E:\newnewcpu\rewrite.vhd"
+vhdl work "E:\newnewcpu\memory.vhd"
+vhdl work "E:\newnewcpu\memctl.vhd"
+vhdl work "E:\newnewcpu\irctl.vhd"
+vhdl work "E:\newnewcpu\count5.vhd"
+vhdl work "E:\newnewcpu\alu.vhd"
+vhdl work "E:\newnewcpu\cpu.vhd"

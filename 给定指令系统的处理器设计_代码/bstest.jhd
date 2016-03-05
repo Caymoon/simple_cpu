@@ -1,0 +1,3 @@
+MODULE bstest
+SUBMODULE cpu
+INSTANCE UUT

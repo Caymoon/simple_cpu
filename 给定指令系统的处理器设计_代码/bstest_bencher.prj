@@ -1,0 +1,7 @@
+vhdl work "rewrite.vhd"
+vhdl work "memory.vhd"
+vhdl work "memctl.vhd"
+vhdl work "irctl.vhd"
+vhdl work "count5.vhd"
+vhdl work "alu.vhd"
+vhdl work "cpu.vhd"

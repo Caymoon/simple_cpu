@@ -1,0 +1,43 @@
+# Reading C:/Modeltech_xe/tcl/vsim/pref.tcl 
+# do {testalu.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim XE vcom 5.6a Compiler 2002.04 Apr 29 2002
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity alu
+# -- Compiling architecture behavioral of alu
+# Model Technology ModelSim XE vcom 5.6a Compiler 2002.04 Apr 29 2002
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package textio
+# -- Loading package std_logic_textio
+# -- Compiling entity testalu
+# -- Compiling architecture testbench_arch of testalu
+# -- Loading entity alu
+# vsim -lib work -t 1ps testalu 
+# Loading C:/Modeltech_xe/win32xoem/../std.standard
+# Loading C:/Modeltech_xe/win32xoem/../ieee.std_logic_1164(body)
+# Loading C:/Modeltech_xe/win32xoem/../ieee.std_logic_arith(body)
+# Loading C:/Modeltech_xe/win32xoem/../ieee.std_logic_unsigned(body)
+# Loading C:/Modeltech_xe/win32xoem/../std.textio(body)
+# Loading C:/Modeltech_xe/win32xoem/../ieee.std_logic_textio(body)
+# Loading work.testalu(testbench_arch)
+# Loading work.alu(behavioral)
+# .wave
+# .structure
+# .signals
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /testalu/uut
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1500 ns  Iteration: 1  Instance: /testalu/uut
+restart
+run -continue
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /testalu/uut
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1500 ns  Iteration: 1  Instance: /testalu/uut
+destroy .wave

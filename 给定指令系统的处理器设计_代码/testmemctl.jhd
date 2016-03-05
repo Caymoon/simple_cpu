@@ -1,0 +1,3 @@
+MODULE testmemctl
+SUBMODULE memctl
+INSTANCE UUT

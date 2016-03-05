@@ -1,0 +1,3 @@
+MODULE testrtmp
+SUBMODULE memory
+INSTANCE UUT

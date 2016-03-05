@@ -1,0 +1,3 @@
+MODULE testrewrite
+SUBMODULE rewrite
+INSTANCE UUT

@@ -1,0 +1,14 @@
+AR memctl behavioral C:/newnewcpu/memctl.vhd sub00/vhpl11 1354800544
+AR alu behavioral C:/newnewcpu/alu.vhd sub00/vhpl05 1354870212
+EN irctl NULL E:/newnewcpu/irctl.vhd sub00/vhpl02 1354793361
+AR cpu behavioral E:/newnewcpu/cpu.vhd sub00/vhpl13 1354792959
+EN cpu NULL E:/newnewcpu/cpu.vhd sub00/vhpl12 1354792958
+EN memory NULL E:/newnewcpu/memory.vhd sub00/vhpl06 1354796244
+AR count5 behavioral E:/newnewcpu/count5.vhd sub00/vhpl01 1354787855
+AR rewrite behavioral E:/newnewcpu/rewrite.vhd sub00/vhpl09 1354796271
+AR memory behavioral E:/newnewcpu/memory.vhd sub00/vhpl07 1354796245
+AR irctl behavioral E:/newnewcpu/irctl.vhd sub00/vhpl03 1354793362
+EN count5 NULL E:/newnewcpu/count5.vhd sub00/vhpl00 1354787854
+EN memctl NULL C:/newnewcpu/memctl.vhd sub00/vhpl10 1354800543
+EN rewrite NULL E:/newnewcpu/rewrite.vhd sub00/vhpl08 1354796270
+EN alu NULL C:/newnewcpu/alu.vhd sub00/vhpl04 1354870211

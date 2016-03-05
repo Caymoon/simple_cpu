@@ -1,0 +1,3 @@
+MODULE testalu
+SUBMODULE alu
+INSTANCE UUT

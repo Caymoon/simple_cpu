@@ -1,0 +1,127 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 1995-2003 Xilinx, Inc.
+-- All Right Reserved.
+--------------------------------------------------------------------------------
+--   ____  ____ 
+--  /   /\/   / 
+-- /___/  \  /    Vendor: Xilinx 
+-- \   \   \/     Version : 9.1i
+--  \   \         Application : ISE
+--  /   /         Filename : testrtmp.ant
+-- /___/   /\     Timestamp : Thu Dec 06 20:02:04 2012
+-- \   \  /  \ 
+--  \___\/\___\ 
+--
+--Command: 
+--Design Name: testrtmp
+--Device: Xilinx
+--
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.STD_LOGIC_TEXTIO.ALL;
+USE STD.TEXTIO.ALL;
+
+ENTITY testrtmp IS
+END testrtmp;
+
+ARCHITECTURE testbench_arch OF testrtmp IS
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "E:\newnewcpu\testrtmp.ano";
+
+    COMPONENT memory
+        PORT (
+            t3 : In std_logic;
+            ir : In std_logic_vector (15 DownTo 0);
+            aluin : In std_logic_vector (7 DownTo 0);
+            Rtmpout : Out std_logic_vector (7 DownTo 0);
+            mdrin : In std_logic_vector (7 DownTo 0)
+        );
+    END COMPONENT;
+
+    SIGNAL t3 : std_logic := '0';
+    SIGNAL ir : std_logic_vector (15 DownTo 0) := "0000000000000000";
+    SIGNAL aluin : std_logic_vector (7 DownTo 0) := "00000000";
+    SIGNAL Rtmpout : std_logic_vector (7 DownTo 0) := "00000000";
+    SIGNAL mdrin : std_logic_vector (7 DownTo 0) := "00000000";
+
+    SHARED VARIABLE TX_ERROR : INTEGER := 0;
+    SHARED VARIABLE TX_OUT : LINE;
+
+    BEGIN
+        UUT : memory
+        PORT MAP (
+            t3 => t3,
+            ir => ir,
+            aluin => aluin,
+            Rtmpout => Rtmpout,
+            mdrin => mdrin
+        );
+
+        PROCESS    -- Annotation process
+            VARIABLE TX_TIME : INTEGER := 0;
+
+            PROCEDURE ANNOTATE_Rtmpout(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", Rtmpout, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, Rtmpout);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+        BEGIN
+            WAIT for 1 fs;
+            ANNOTATE_Rtmpout(0);
+            ANNO_LOOP : LOOP
+                WAIT for 50 ns;
+                TX_TIME := TX_TIME + 50;
+                ANNOTATE_Rtmpout(TX_TIME);
+                WAIT for 50 ns;
+                TX_TIME := TX_TIME + 50;
+            END LOOP ANNO_LOOP;
+        END PROCESS;
+
+        PROCESS
+            BEGIN
+                -- -------------  Current Time:  700ns
+                WAIT FOR 700 ns;
+                t3 <= '1';
+                ir <= "0000011100000000";
+                aluin <= "00000010";
+                -- -------------------------------------
+                -- -------------  Current Time:  800ns
+                WAIT FOR 100 ns;
+                t3 <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  1200ns
+                WAIT FOR 400 ns;
+                t3 <= '1';
+                ir <= "0001010010000010";
+                mdrin <= "00000011";
+                -- -------------------------------------
+                -- -------------  Current Time:  1300ns
+                WAIT FOR 100 ns;
+                t3 <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  1700ns
+                WAIT FOR 400 ns;
+                ir <= "1111111111111111";
+                WAIT FOR 8300 ns;
+
+                STD.TEXTIO.write(TX_OUT, string'("Total[]"));
+                STD.TEXTIO.writeline(RESULTS, TX_OUT);
+                ASSERT (FALSE) REPORT
+                    "Success! Simulation for annotation completed"
+                    SEVERITY FAILURE;
+            END PROCESS;
+
+    END testbench_arch;
+

@@ -1,0 +1,174 @@
+xst -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+ngdbuild -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "G:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "G:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "G:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "G:/newnewcpu/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "G:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "G:/newnewcpu/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "D:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "D:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "D:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "D:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "D:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "D:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/tt/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/tt/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/tt/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/tt/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+xst -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+xst -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -ifn cpu.xst -ofn cpu.syr
+ngdbuild -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "E:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "E:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
+ngdbuild -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -dd _ngo -nt timestamp -uc "cpu.ucf" -p xc3s500e-pq208-4 "cpu.ngc" cpu.ngd
+map -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -p xc3s500e-pq208-4 -cm area -pr b -k 4 -c 100 -o cpu_map.ncd cpu.ngd cpu.pcf
+par -ise "C:/newnewcpu/newnewcpu.ise" -w -intstyle ise -ol std -t 1 cpu_map.ncd cpu.ncd cpu.pcf
+trce -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -e 3 -s 4 -xml cpu cpu.ncd -o cpu.twr cpu.pcf -ucf cpu.ucf
+bitgen -ise "C:/newnewcpu/newnewcpu.ise" -intstyle ise -f cpu.ut cpu.ncd
